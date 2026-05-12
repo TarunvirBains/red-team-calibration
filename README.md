@@ -51,6 +51,14 @@ Reviewer quality is judged by differentiated signal:
 - Did the reviewer provide repro cases or precise counterexamples?
 - Did the reviewer improve the final release-gate panel definition?
 
+## Skills
+
+The `skills/` directory contains scrubbed copies of the two process skills that
+came out of this calibration work:
+
+- `red-team-release-gate`: a heavier serial release-gate review workflow.
+- `simplify-with-review`: a lighter parallel simplification review workflow.
+
 ## License
 
 MIT. See `LICENSE`.
