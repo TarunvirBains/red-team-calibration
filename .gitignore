@@ -1,4 +1,5 @@
 .DS_Store
 *.log
+*.err
+*.out
 /tmp/
-

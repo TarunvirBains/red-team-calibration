@@ -1,21 +1,29 @@
 # Cross-Review Matrix
 
-| Reviewer | Problem | True Findings | False Positives | Missed Obvious Issues | Role-Fit Notes |
+| Reviewer | Case | True Findings | False Positives | Missed Obvious Issues | Notes |
 | --- | --- | ---: | ---: | ---: | --- |
-| DeepSeek V4 | 327 |  |  |  |  |
-| DeepSeek V4 | 715 |  |  |  |  |
-| DeepSeek V4 | 726 |  |  |  |  |
-| Kimi K2.6 | 327 |  |  |  |  |
-| Kimi K2.6 | 715 |  |  |  |  |
-| Kimi K2.6 | 726 |  |  |  |  |
-| GLM 5.1 | 327 |  |  |  |  |
-| GLM 5.1 | 715 |  |  |  |  |
-| GLM 5.1 | 726 |  |  |  |  |
+| Codex 5.5 | A |  |  |  |  |
+| Codex 5.5 | B |  |  |  |  |
+| Codex 5.5 | C |  |  |  |  |
+| DeepSeek V4 | A |  |  |  |  |
+| DeepSeek V4 | B |  |  |  |  |
+| DeepSeek V4 | C |  |  |  |  |
+| Claude Opus 4.7 | A |  |  |  |  |
+| Claude Opus 4.7 | B |  |  |  |  |
+| Claude Opus 4.7 | C |  |  |  |  |
+| Kimi K2.6 | A |  |  |  |  |
+| Kimi K2.6 | B |  |  |  |  |
+| Kimi K2.6 | C |  |  |  |  |
+| Gemini 3.1 Pro | A |  |  |  |  |
+| Gemini 3.1 Pro | B |  |  |  |  |
+| Gemini 3.1 Pro | C |  |  |  |  |
+| GLM 5.1 | A |  |  |  |  |
+| GLM 5.1 | B |  |  |  |  |
+| GLM 5.1 | C |  |  |  |  |
 
 ## Notes
 
 - Distinctive signal:
 - Redundant signal:
-- Weak role alignment:
-- Recommended role edits:
-
+- Weak model-slot signal:
+- Recommended instruction edits:

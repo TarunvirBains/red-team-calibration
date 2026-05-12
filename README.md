@@ -1,46 +1,56 @@
 # Red-Team Calibration Harness
 
-This repository calibrates reviewer roles for the release-gate red-team panel.
+This repository calibrates release-gate review output across a fixed model
+panel.
 
-The experiment uses one intentionally constrained Rust solver pass, then asks
-three reviewers to review all three hard algorithm problems. The goal is not to
-prove who can solve LeetCode problems. The goal is to test whether each
-specialist role produces distinct, useful review signal across different
-correctness surfaces.
+The experiment uses intentionally constrained low-reasoning Haiku implementer
+passes in parallel, then asks reviewers to review the resulting Go library
+implementations. The active calibration tasks are product-style contracts
+written for this repository, so memorized public benchmark answers are less
+useful. The goal is to compare the distinct review signal each fixed model slot
+produces from the same neutral prompt.
 
 ## Reviewers
 
-- DeepSeek V4: Edge-Case Provocateur. Expected signal: boundary failures,
-  stress cases, overflow, and performance cliffs.
-- Kimi K2.6: Stateful Logic Analyst. Expected signal: invariant drift,
-  long-chain state consistency, mutation errors, and failure propagation.
-- GLM 5.1: Integration Skeptic. Expected signal: input contracts, parser/API
-  boundaries, type mapping, malformed inputs, and external-interface behavior.
+The active run does not give reviewers specialty labels or specialty cues. Each
+reviewer is asked to review as a senior software engineer at a large global
+technology company using the same issue-register shape.
 
-## Problems
+## Active Contracts
 
-- 327 Count of Range Sum: prefix sums, inclusive bounds, overflow, and
-  performance-sensitive counting.
-- 715 Range Module: mutable interval state across add/remove/query operations.
-- 726 Number of Atoms: parser stack, token mapping, nested groups, and canonical
-  output ordering.
+- Case A: utility-meter audit helper for reviewable periods in reading data.
+- Case B: customer entitlement helper for account-id eligibility spans.
+- Case C: lab inventory reconciliation helper for delivered and withdrawn
+  compounds.
+- Case D: care-plan fatigue scoring across continuous day runs.
+- Case E: coaching coverage helper with limited support grants.
+- Case F: readiness-gated checklist routing helper.
 
 ## Workflow
 
-1. Run the solver prompt in `solver/prompt.md`.
-2. Save the combined answer to `solver/combined-solution.md`.
-3. Split the relevant solution into each problem's `solution.md`.
-4. Ask each reviewer to review all three solutions using its specialist lens.
-5. Save reviewer outputs under `reviews/<reviewer>/<problem>.md`.
+1. Run each batch of case prompts under `solver/case-*/` in parallel with
+   Haiku at low reasoning.
+2. Each solver writes real Go files: `solution.go`, `solution_test.go`, and
+   `notes.md`.
+3. Run targeted Go tests before review. Some checked-in solver outputs are
+   intentionally flawed calibration artifacts, so the full `go test ./solver/...`
+   gate may fail or time out after reviewers expose a blocker.
+4. Ask each reviewer to review all three solver implementations with the same
+   neutral prompt.
+5. Save reviewer outputs as Markdown under `reviews/<reviewer>/cases/<case>.md`.
 6. Fill in `synthesis/cross-review-matrix.md`.
-7. Tune role descriptions in `synthesis/reviewer-role-tuning.md`.
+7. Tune panel instructions in `synthesis/panel-instruction-tuning.md`.
 
 ## Evaluation Rule
 
 Reviewer quality is judged by differentiated signal:
 
 - Did the reviewer find true issues others missed?
-- Did the issue match the role's intended specialty?
+- Did the issue match a useful recurring strength for that model slot?
 - Did the reviewer avoid hallucinated blockers?
 - Did the reviewer provide repro cases or precise counterexamples?
-- Did the reviewer improve the final release-gate role definition?
+- Did the reviewer improve the final release-gate panel definition?
+
+## License
+
+MIT. See `LICENSE`.
