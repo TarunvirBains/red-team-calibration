@@ -83,10 +83,6 @@ They are Codex-oriented skill files with command examples from this calibration
 setup. The review principles are language-agnostic; adapt model names and CLI
 commands to your own tooling.
 
-The README and bundled skills were also reviewed directly. See
-`reviews/readme-skills/prompt.md` and the reviewer outputs alongside it. Those
-outputs are raw review artifacts and may quote text that was changed afterward.
-
 ## License
 
 MIT. See `LICENSE`.
