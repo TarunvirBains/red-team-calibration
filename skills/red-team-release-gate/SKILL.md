@@ -1,6 +1,6 @@
 ---
 name: red-team-release-gate
-description: Use when preparing an alpha, beta, stable release, red-team review, security review, penetration-test-style code assessment, or publish gate for a crate, package, service, CLI, SDK, library, or app where correctness, isolation, persistence, auth, generated code, docs, or public API misuse could create serious release risk.
+description: Use when preparing an alpha, beta, stable release, red-team review, security review, penetration-test-style code assessment, or publish gate for a package, module, service, CLI, SDK, library, or app where correctness, isolation, persistence, auth, generated code, docs, or public API misuse could create serious release risk.
 ---
 
 # Red-Team Release Gate
@@ -157,15 +157,15 @@ Order:
 4. DeepSeek V4 via OpenRouter/opencode, max variant, as Edge-Case Provocateur:
    subsystem bug hunts, stress paths, performance cliffs, implementation risk.
 5. Codex 5.5 at `xhigh` as Logic & Security Auditor: root cause, mathematical
-   correctness, file-line evidence, focused repros, TDD fixes, final integration
-   judgment.
+   correctness, file-line evidence, focused repros, TDD fixes, and
+   integration-risk evidence.
 6. GLM 5.1 via OpenRouter/opencode, max variant, as Integration Skeptic:
    boundaries, type/API mappings, malformed dependency behavior, adversarial
    consensus check.
 
-Codex is not the final slot; the orchestrator adjudicates all outputs regardless
-of reviewer order. If GLM or any late reviewer raises a logic/security issue
-after Codex, validate it with Codex-level rigor during triage.
+Reviewer order does not grant final authority. The orchestrator triages all
+outputs and validates every logic/security claim to the same correctness and
+security standard before accepting or rejecting it.
 
 ## Pin And Routing Checks
 
@@ -253,9 +253,9 @@ Append this shared depth template to every reviewer prompt, followed by that
 slot's specialization and the running known-issue handoff:
 
 ```text
-Review as a senior software engineer at a large multinational technology
-company. Be exhaustive, structured, and correctness-oriented within your assigned
-specialization. Do not stop at obvious findings.
+Review as an experienced senior software engineer. Be exhaustive, structured,
+and correctness-oriented within your assigned specialization. Do not stop at
+obvious findings.
 
 Use three passes:
 1. Contract compliance against prompts, specs, docs, examples, and public API.

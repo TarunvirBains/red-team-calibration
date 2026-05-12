@@ -106,7 +106,7 @@ When an independent panel is authorized, use non-opencode reviewers first:
 - Claude Opus 4.7 via Claude Code CLI, `careful-coder`, max effort, read-only:
   architecture, API misuse, security, maintainability, docs/examples.
 - Codex 5.5 at `xhigh`: correctness, root cause, file-line evidence, focused
-  repros, final integration judgment.
+  repros, and integration-risk evidence.
 
 Run this review panel in parallel by default for quick broad-stroke coverage.
 Verify local CLI flags before first use and wrap reviewer calls with
@@ -129,9 +129,8 @@ Non-goals:
 Verification already run:
 Known gaps:
 
-Review as a senior software engineer at a large multinational technology
-company. Be exhaustive, structured, and correctness-oriented within your assigned
-specialization. Use three passes:
+Review as an experienced senior software engineer. Be exhaustive, structured,
+and correctness-oriented within your assigned specialization. Use three passes:
 1. Contract and behavior preservation.
 2. Edge cases, sibling patterns, state/resource/concurrency risks, and tests.
 3. Docs/examples/API usability, maintainability, and adoption risk.
